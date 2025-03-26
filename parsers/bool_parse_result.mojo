@@ -13,10 +13,10 @@ struct BoolParseResult(EqualityComparable, Stringable, Writable):
         return not (self == other)
     
     fn __str__(self) -> String:
-        return String("ParseResult(", self.result, self.rest, ")")
+        return String("BoolParseResult(", self.result, self.rest, ")")
     
     fn write_to[W: Writer](self, mut writer: W):
-        var string = "ParseResult"
+        var string = "BoolParseResult"
         # Write a single `Span[Byte]`:
         writer.write_bytes(string.as_bytes())
         # Pass multiple args that can be converted to a `Span[Byte]`:
